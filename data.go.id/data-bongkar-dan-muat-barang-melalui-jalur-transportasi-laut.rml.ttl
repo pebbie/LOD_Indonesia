@@ -1,0 +1,85 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix r2rml: <http://www.w3.org/ns/r2rml#>.
+@prefix sdm: <http://purl.org/linked-data/sdmx-dimension#>.
+@prefix cube: <http://purl.org/linked-data/cube#>.
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix ont: <http://pebbie.org/ns/data.go.id/ontologi#>.
+
+<UntitledCSV1>
+    rml:logicalSource
+            [ rml:iterator
+               "*";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/63db3064-1183-4afc-980f-b5089685095e/resource/c0de5494-44ba-4da3-843e-484a4da067f7/download/transportasilautperprovinsi2009.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+                    [ r2rml:joinCondition
+                            [ r2rml:child
+                               "kode_provinsi";
+                            r2rml:parent
+                               "kode_provinsi" ];
+                    r2rml:parentTriplesMap
+                       <Provinsi> ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ rml:reference "total_bongkar" ];
+            r2rml:predicate
+               <#totalBongkar> ],
+            [ r2rml:objectMap
+               [ rml:reference "total_muat" ];
+            r2rml:predicate
+               <#totalMuat> ],
+            [ r2rml:objectMap
+               [ rml:reference "selisih_ekspor_impor" ];
+            r2rml:predicate
+               <#selisihExpImp> ];
+    r2rml:subjectMap
+            [ cube:dataSet
+                "<http://example.org/dataset/data-bongkar-dan-muat-barang-melalui-jalur-transportasi-laut>";
+            r2rml:class
+               cube:Observation;
+            r2rml:template
+               "#obs{kode_provinsi}" ].
+<Provinsi>
+    rml:logicalSource
+            [ rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/63db3064-1183-4afc-980f-b5089685095e/resource/c0de5494-44ba-4da3-843e-484a4da067f7/download/transportasilautperprovinsi2009.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ rml:reference "nama_provinsi" ];
+            r2rml:predicate
+               <rdf:label> ],
+            [ r2rml:objectMap
+               [ rml:reference "latitude" ];
+            r2rml:predicate
+               wgs:lat ],
+            [ r2rml:objectMap
+               [ rml:reference "longitude" ];
+            r2rml:predicate
+               wgs:long ];
+    r2rml:subjectMap
+            [ r2rml:class
+               ont:Provinsi;
+            r2rml:template
+               "http://example.org/area/{kode_provinsi}" ].
+<UntitledJSON10>
+    rml:logicalSource
+            [ rml:iterator
+               "$.*";
+            rml:referenceFormulation
+               ql:JSONPath;
+            rml:source
+                "http://data.go.id/api/3/action/package_show?id=data-bongkar-dan-muat-barang-melalui-jalur-transportasi-laut" ];
+    r2rml:predicateObjectMap
+       [ r2rml:objectMap [ rml:reference "title" ]; r2rml:predicate <rdfs:label> ];
+    r2rml:subjectMap
+            [ r2rml:class
+               cube:DataSet;
+            r2rml:template
+               "http://example.org/dataset/{name}" ].
