@@ -15,7 +15,7 @@ untuk mencoba hasilnya silakan gunakan aplikasi di http://pebbie.org/mashup/rml
 
 + setelah file rml berhasil dimuat, klik pada tombol "Export as Linked Widget" di kiri atas halaman. Selanjutnya jendela peramban baru akan terbuka. 
 + Salin alamat halaman yang baru ke Clipboard.
-+ buka situs [http://linkedwidgets.org|linked widgets]
++ buka situs http://linkedwidgets.org
 + isikan alamat yang telah disalin pada Dialog "Quick Mashup" di pojok kanan bawah halaman (di kotak isian Url). jangan lupa isi kotak isian "Name". lalu klik tombol bergambar "+"
 + pilih widget lain dari koleksi (misal "JSON Viewer") yang dibutuhkan lalu klik pada tautan "Quick Mashup"
 + drag-and-drop widget baru dari sisi kiri halaman, lalu hubungkan port dengan menarik (drag-drop) "kabel"
