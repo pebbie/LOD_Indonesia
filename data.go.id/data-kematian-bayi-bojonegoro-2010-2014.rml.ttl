@@ -1,0 +1,157 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix r2rml: <http://www.w3.org/ns/r2rml#>.
+@prefix sdm: <http://purl.org/linked-data/sdmx-dimension#>.
+@prefix sd: <http://purl.org/linked-data/sdmx-measure#>.
+@prefix cube: <http://purl.org/linked-data/cube#>.
+
+<#observation2010>
+    rml:logicalSource
+            [ rml:iterator
+               ";";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/aed431e2-9fb0-499a-b6c2-03457be8c303/resource/d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18/download/datakematianbayikecamatan20102014.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ r2rml:constant "#2010"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               sdm:refPeriod ],
+            [ r2rml:objectMap
+               [ rml:reference "2010" ];
+            r2rml:predicate
+               sd:obsValue ],
+            [ r2rml:objectMap
+               [ rml:reference "KECAMATAN" ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#dataset_d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
+    r2rml:subjectMap
+       [ r2rml:class cube:Observation; r2rml:template "#o_{@row}_2010" ].
+<#observation2011>
+    rml:logicalSource
+            [ rml:iterator
+               ";";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/aed431e2-9fb0-499a-b6c2-03457be8c303/resource/d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18/download/datakematianbayikecamatan20102014.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ r2rml:constant "#2011"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               sdm:refPeriod ],
+            [ r2rml:objectMap
+               [ rml:reference "2011" ];
+            r2rml:predicate
+               sd:obsValue ],
+            [ r2rml:objectMap
+               [ rml:reference "KECAMATAN" ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#dataset_d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
+    r2rml:subjectMap
+       [ r2rml:class cube:Observation; r2rml:template "#o_{@row}_2011" ].
+<#observation2012>
+    rml:logicalSource
+            [ rml:iterator
+               ";";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/aed431e2-9fb0-499a-b6c2-03457be8c303/resource/d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18/download/datakematianbayikecamatan20102014.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ r2rml:constant "#2012"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               sdm:refPeriod ],
+            [ r2rml:objectMap
+               [ rml:reference "2012" ];
+            r2rml:predicate
+               sd:obsValue ],
+            [ r2rml:objectMap
+               [ rml:reference "KECAMATAN" ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#dataset_d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
+    r2rml:subjectMap
+       [ r2rml:class cube:Observation; r2rml:template "#o_{@row}_2012" ].
+<#observation2013>
+    rml:logicalSource
+            [ rml:iterator
+               ";";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/aed431e2-9fb0-499a-b6c2-03457be8c303/resource/d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18/download/datakematianbayikecamatan20102014.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ r2rml:constant "#2013"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               sdm:refPeriod ],
+            [ r2rml:objectMap
+               [ rml:reference "2013" ];
+            r2rml:predicate
+               sd:obsValue ],
+            [ r2rml:objectMap
+               [ rml:reference "KECAMATAN" ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#dataset_d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
+    r2rml:subjectMap
+       [ r2rml:class cube:Observation; r2rml:template "#o_{@row}_2013" ].
+<#observation2014>
+    rml:logicalSource
+            [ rml:iterator
+               ";";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.go.id/dataset/aed431e2-9fb0-499a-b6c2-03457be8c303/resource/d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18/download/datakematianbayikecamatan20102014.csv" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ r2rml:constant "#2014"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               sdm:refPeriod ],
+            [ r2rml:objectMap
+               [ rml:reference "2014" ];
+            r2rml:predicate
+               sd:obsValue ],
+            [ r2rml:objectMap
+               [ rml:reference "KECAMATAN" ];
+            r2rml:predicate
+               sdm:refArea ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#dataset_d6cfe6ce-07fc-4fb2-aea9-8a65e5f22d18"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
+    r2rml:subjectMap
+       [ r2rml:class cube:Observation; r2rml:template "#o_{@row}_2014" ].
+<#dataset>
+    rml:logicalSource
+            [ rml:iterator
+               "$.result.resources";
+            rml:referenceFormulation
+               ql:JSONPath;
+            rml:source
+                "http://data.go.id/api/3/action/package_show?id=data-kematian-ibu-dan-bayi-per-kecamatan-di-kabupaten-bojonegoro" ];
+    r2rml:predicateObjectMap
+            [ r2rml:objectMap
+               [ rml:reference "$.[0].name" ];
+            r2rml:predicate
+               <rdfs:label> ];
+    r2rml:subjectMap
+       [ r2rml:class cube:DataSet; r2rml:template "#dataset_{$.[0].id}" ].

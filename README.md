@@ -11,6 +11,9 @@ untuk mencoba hasilnya silakan gunakan aplikasi di http://pebbie.org/mashup/rml
 + setelah berhasil dimuat, klik pada tab "Output", lalu klik tombol "Run RML"
 + Simpan data RDF dengan klik pada tombol "Save RDF"
 
+catatan:
+beberapa bagian dari spesifikasi RML belum didukung oleh editor visual tersebut sehingga akan ada bagian yang hilang (rr:termType pada node rr:objectMap). Untuk mengantisipasi hal ini, langsung saja salin isi file .rml.ttl ke tab "Output" bagian "RML Output".
+
 ## Integrasi mashup pada platform LinkedWidget (eksperimental)
 
 + setelah file rml berhasil dimuat, klik pada tombol "Export as Linked Widget" di kiri atas halaman. Selanjutnya jendela peramban baru akan terbuka. 
