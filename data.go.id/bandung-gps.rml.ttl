@@ -1,0 +1,45 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix r2rml: <http://www.w3.org/ns/r2rml#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<#mapping>
+	rml:logicalSource
+            [ rml:iterator
+               "//_:DeviceLastLocationAndImage";
+            rml:referenceFormulation
+               ql:XPath;
+            rml:source
+                "http://id-gpstracker.com/webservice/tracknow.asmx/getDeviceListWithLocationWithImage?APIKey=2243a9fcdca0f45232fb0f94d99c5a2d" ];
+    r2rml:predicateObjectMap
+            [r2rml:predicate
+               geo:lat;
+            r2rml:objectMap
+               [ rml:reference "_:GPS_Latitude" ] ];
+    r2rml:predicateObjectMap
+            [r2rml:predicate
+               rdfs:label;
+            r2rml:objectMap
+               [ rml:reference "_:TE_NAME"] ];
+    r2rml:predicateObjectMap
+            [r2rml:predicate
+               foaf:name;
+            r2rml:objectMap
+               [ rml:reference "_:TE_OWNER"] ];
+    r2rml:predicateObjectMap
+            [r2rml:predicate
+               geo:long;
+            r2rml:objectMap
+               [ rml:reference "_:GPS_Longitude"] ];
+    r2rml:predicateObjectMap
+            [r2rml:predicate
+               foaf:depiction;
+            r2rml:objectMap
+               [ rml:reference "_:IMG_URL"; r2rml:termType r2rml:IRI] ];
+    r2rml:subjectMap
+            [ r2rml:class
+               geo:SpatialThing;
+            r2rml:template
+               "#obj_{_:TE_UID}" ].
