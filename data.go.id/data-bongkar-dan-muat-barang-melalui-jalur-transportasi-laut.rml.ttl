@@ -5,11 +5,12 @@
 @prefix cube: <http://purl.org/linked-data/cube#>.
 @prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
 @prefix ont: <http://pebbie.org/ns/data.go.id/ontologi#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<UntitledCSV1>
+<#obsMapping>
     rml:logicalSource
             [ rml:iterator
-               "*";
+               ",";
             rml:referenceFormulation
                ql:CSV;
             rml:source
@@ -22,7 +23,7 @@
                             r2rml:parent
                                "kode_provinsi" ];
                     r2rml:parentTriplesMap
-                       <Provinsi> ];
+                       <#Provinsi> ];
             r2rml:predicate
                sdm:refArea ],
             [ r2rml:objectMap
@@ -36,15 +37,17 @@
             [ r2rml:objectMap
                [ rml:reference "selisih_ekspor_impor" ];
             r2rml:predicate
-               <#selisihExpImp> ];
+               <#selisihExpImp> ],
+            [ r2rml:objectMap
+               [ r2rml:constant "#data-bongkar-dan-muat-barang-melalui-jalur-transportasi-laut"; r2rml:termType r2rml:IRI ];
+            r2rml:predicate
+               cube:dataSet ];
     r2rml:subjectMap
-            [ cube:dataSet
-                "<http://example.org/dataset/data-bongkar-dan-muat-barang-melalui-jalur-transportasi-laut>";
-            r2rml:class
+            [ r2rml:class
                cube:Observation;
             r2rml:template
                "#obs{kode_provinsi}" ].
-<Provinsi>
+<#Provinsi>
     rml:logicalSource
             [ rml:referenceFormulation
                ql:CSV;
@@ -67,8 +70,8 @@
             [ r2rml:class
                ont:Provinsi;
             r2rml:template
-               "http://example.org/area/{kode_provinsi}" ].
-<UntitledJSON10>
+               "#area{kode_provinsi}" ].
+<#datasetMapping>
     rml:logicalSource
             [ rml:iterator
                "$.*";
@@ -77,9 +80,9 @@
             rml:source
                 "http://data.go.id/api/3/action/package_show?id=data-bongkar-dan-muat-barang-melalui-jalur-transportasi-laut" ];
     r2rml:predicateObjectMap
-       [ r2rml:objectMap [ rml:reference "title" ]; r2rml:predicate <rdfs:label> ];
+       [ r2rml:objectMap [ rml:reference "title" ]; r2rml:predicate rdfs:label ];
     r2rml:subjectMap
             [ r2rml:class
                cube:DataSet;
             r2rml:template
-               "http://example.org/dataset/{name}" ].
+               "#{name}" ].
