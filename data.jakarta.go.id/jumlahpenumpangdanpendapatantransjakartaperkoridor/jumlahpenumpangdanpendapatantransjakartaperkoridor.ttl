@@ -1,0 +1,91 @@
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+#10
+#11
+@prefix tr: <http://data.jakarta.go.id/ontology/transj/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.jakarta.go.id/transj/koridor/1>
+  a tr:Koridor ;
+  tr:ruteStart "Blok M" ;
+  tr:ruteEnd "Kota" ;
+  tr:pendapatan "80149751000"^^xsd:int ;
+  tr:jumlahPenumpang "23792069"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/2>
+  a tr:Koridor ;
+  tr:ruteStart "Pulo Gadung" ;
+  tr:ruteEnd "Harmoni" ;
+  tr:pendapatan "28632298000"^^xsd:int ;
+  tr:jumlahPenumpang "8821192"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/3>
+  a tr:Koridor ;
+  tr:ruteStart "Harmoni" ;
+  tr:ruteEnd "Kalideres" ;
+  tr:pendapatan "34904687000"^^xsd:int ;
+  tr:jumlahPenumpang "10831473"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/4>
+  a tr:Koridor ;
+  tr:ruteStart "Pulo Gadung" ;
+  tr:ruteEnd "Dukuh Atas" ;
+  tr:pendapatan "23536928000"^^xsd:int ;
+  tr:jumlahPenumpang "7282254"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/5>
+  a tr:Koridor ;
+  tr:ruteStart "Kp Melayu" ;
+  tr:ruteEnd "Ancol" ;
+  tr:pendapatan "38211619000"^^xsd:int ;
+  tr:jumlahPenumpang "11436445"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/6>
+  a tr:Koridor ;
+  tr:ruteStart "Ragunan" ;
+  tr:ruteEnd "Kuningan" ;
+  tr:pendapatan "29552635500"^^xsd:int ;
+  tr:jumlahPenumpang "9090588"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/7>
+  a tr:Koridor ;
+  tr:ruteStart "Kp Rambutan" ;
+  tr:ruteEnd "Kp Melayu" ;
+  tr:pendapatan "33854913500"^^xsd:int ;
+  tr:jumlahPenumpang "10681357"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/8>
+  a tr:Koridor ;
+  tr:ruteStart "Lebak Bulus" ;
+  tr:ruteEnd "Harmoni" ;
+  tr:pendapatan "27981940500"^^xsd:int ;
+  tr:jumlahPenumpang "8516995"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/9>
+  a tr:Koridor ;
+  tr:ruteStart "Pinang Ranti" ;
+  tr:ruteEnd "Pluit" ;
+  tr:pendapatan "46525660000"^^xsd:int ;
+  tr:jumlahPenumpang "14352556"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/10>
+  a tr:Koridor ;
+  tr:ruteStart "Cililitan" ;
+  tr:ruteEnd "Tanjung Priok" ;
+  tr:pendapatan "12861749500"^^xsd:int ;
+  tr:jumlahPenumpang "3895295"^^xsd:int .
+
+<http://data.jakarta.go.id/transj/koridor/11>
+  a tr:Koridor ;
+  tr:ruteStart "Kp Melayu" ;
+  tr:ruteEnd "Pulo Gebang" ;
+  tr:pendapatan "8174748500"^^xsd:int ;
+  tr:jumlahPenumpang "2560645"^^xsd:int .
+

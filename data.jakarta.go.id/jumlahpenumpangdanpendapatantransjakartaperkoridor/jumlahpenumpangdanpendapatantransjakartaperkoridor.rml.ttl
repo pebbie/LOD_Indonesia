@@ -1,0 +1,84 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix rmlx: <http://pebbie.org/ns/rmlx#>.
+@prefix rmlx-op: <http://pebbie.org/ns/rmlx-functions#>.
+@prefix http: <http://www.w3.org/2011/http#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tr: <http://data.jakarta.go.id/ontology/transj/>.
+
+<#UntitledCSV1>
+    rml:logicalSource
+            [ rml:iterator
+               ",";
+            rml:referenceFormulation
+               ql:CSV;
+            rml:source
+                "http://data.jakarta.go.id/dataset/eead98d9-87f9-4dcf-b825-ea541bc7d873/resource/ce8d6002-b9b5-40ca-9c06-930bd3bbc346/download/processed-jumlah-penumpang-pendapatan-busway-per-koridor-2012.csv" ];
+    rmlx:transform [
+        rmlx:outputVar "jum_penumpang";
+        rmlx:function rmlx-op:replace;
+        rmlx:parameterMapping [rmlx:varName "search"; rr:constant ","];
+        rmlx:parameterMapping [rmlx:varName "replace"; rr:constant ""];
+        rmlx:parameterMapping [rmlx:varName "subject"; rml:reference "jumlah_penumpang"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "pdpt_trim";
+        rmlx:function rmlx-op:trim;
+        rmlx:parameterMapping [rmlx:varName "input"; rml:reference "pdpt"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "jp_trim";
+        rmlx:function rmlx-op:trim;
+        rmlx:parameterMapping [rmlx:varName "input"; rml:reference "jum_penumpang"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "pdpt";
+        rmlx:function rmlx-op:replace;
+        rmlx:parameterMapping [rmlx:varName "search"; rr:constant ","];
+        rmlx:parameterMapping [rmlx:varName "replace"; rr:constant ""];
+        rmlx:parameterMapping [rmlx:varName "subject"; rml:reference "pendapatan"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "koridor_roman";
+        rmlx:function rmlx-op:replace;
+        rmlx:parameterMapping [rmlx:varName "search"; rr:constant "Koridor "];
+        rmlx:parameterMapping [rmlx:varName "replace"; rr:constant ""];
+        rmlx:parameterMapping [rmlx:varName "subject"; rml:reference "koridor"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "rute_part";
+        rmlx:function rmlx-op:split;
+        rmlx:parameterMapping [rmlx:varName "separator"; rr:constant " - "];
+        rmlx:parameterMapping [rmlx:varName "input"; rml:reference "rute"]
+    ];
+    rmlx:transform [
+        rmlx:outputVar "koridor_int";
+        rmlx:function [
+            http:methodName "GET";
+            http:requestURI "http://localhost/mashup/roman2int?{value}"
+        ];
+        rmlx:parameterMapping [rmlx:varName "value"; rml:reference "koridor_roman"]
+    ];
+    rr:subjectMap
+       [ rr:class tr:Koridor; rr:template "http://data.jakarta.go.id/transj/koridor/{koridor_int}" ];
+    rr:predicateObjectMap
+       [
+       	 rr:predicate tr:ruteStart;
+       	 rr:objectMap[rml:reference "rute_part[0]"]
+    	];
+    rr:predicateObjectMap
+       [
+       	 rr:predicate tr:ruteEnd;
+       	 rr:objectMap[rml:reference "rute_part[1]"]
+    	];
+   	rr:predicateObjectMap
+       [
+       	 rr:predicate tr:pendapatan;
+       	 rr:objectMap[rml:reference "pdpt_trim"; rr:datatype xsd:int]
+    	];
+   	rr:predicateObjectMap
+       [
+       	 rr:predicate tr:jumlahPenumpang;
+       	 rr:objectMap[rml:reference "jp_trim"; rr:datatype xsd:int]
+    	].
